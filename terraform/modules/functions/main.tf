@@ -25,17 +25,11 @@ data "archive_file" "source" {
   source_dir  = "${data.external.ts_build.working_dir}${data.external.ts_build.result.dest}"
   output_path = "/tmp/function-${local.timestamp}.zip"
 }
-
-# Create bucket that will host the source code
-resource "google_storage_bucket" "bucket" {
-  name = "${var.project}-fns"
-}
-
 # Add source code zip to bucket
 resource "google_storage_bucket_object" "zip" {
   # Append file MD5 to force bucket to be recreated
   name   = "source.zip#${data.archive_file.source.output_md5}"
-  bucket = google_storage_bucket.bucket.name
+  bucket = var.function_bucket_name
   source = data.archive_file.source.output_path
 }
 

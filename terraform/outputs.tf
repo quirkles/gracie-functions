@@ -1,3 +1,3 @@
 output "uploadFileUrl" {
-  value = module.uploadFile.function_url
+  value = module.upload_file.function_url
 }

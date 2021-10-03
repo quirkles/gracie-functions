@@ -1,6 +1,7 @@
+variable "image_bucket_name" {}
 variable "project" {}
 variable "function_name" {
-  default = "upload_file"
+  default = "new_image_handler"
 }
 variable "function_entry_point" {
   default = "main"

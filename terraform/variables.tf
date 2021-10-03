@@ -9,3 +9,11 @@ variable "region" {
 variable "zone" {
   default  = "us-central1-c"
 }
+
+variable "fn_bucket_name" {
+  default  = "gracie-fns"
+}
+
+variable "image_bucket_name" {
+  default  = "gracie-images"
+}

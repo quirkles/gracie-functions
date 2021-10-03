@@ -6,16 +6,30 @@
   "scripts": {
     "compile-typescript": "tsc",
     "clean": "rm -rf dist",
-    "build": "npm run clean && npm run compile-typescript"
+    "build": "npm run clean && npm run compile-typescript",
+    "dev": "ENV=local ts-node-dev --transpile-only --no-notify app.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "@types/ramda": "^0.27.45",
+    "babel-jest": "^27.2.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^27.2.4",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
   },
   "dependencies": {
+    "@google-cloud/functions": "^1.2.0",
     "ramda": "^0.27.1"
   }
 }

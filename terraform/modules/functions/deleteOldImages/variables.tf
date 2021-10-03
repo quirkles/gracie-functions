@@ -1,6 +1,6 @@
 variable "project" {}
 variable "function_name" {
-  default = "upload_file"
+  default = "delete_old_images"
 }
 variable "function_entry_point" {
   default = "main"
